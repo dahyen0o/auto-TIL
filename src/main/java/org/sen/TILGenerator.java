@@ -45,12 +45,12 @@ public class TILGenerator {
 
         stringBuilder.append(String.format("### 블로그 포스팅%n%n"));
         blogPosts.forEach((title, url) ->
-                stringBuilder.append(String.format("- 📝 [%s]('%s')%n%n", title, url))
+                stringBuilder.append(String.format("- 📝 [%s](%s)%n%n", title, url))
         );
 
         stringBuilder.append(String.format("### 독서 기록%n%n"));
         readingCommits.forEach((title, url) ->
-                stringBuilder.append(String.format("- 📝 [%s]('%s')%n%n", title, url))
+                stringBuilder.append(String.format("- 📝 [%s](%s)%n%n", title, url))
         );
         return stringBuilder;
     }
