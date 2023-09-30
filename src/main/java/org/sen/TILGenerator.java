@@ -10,6 +10,8 @@ import java.util.Map;
 
 public class TILGenerator {
 
+    private static final String ROOT_DIRECTORY = "TIL";
+
     public void generate() throws IOException {
         final LocalDate yesterday = getYesterday();
 
@@ -23,9 +25,9 @@ public class TILGenerator {
             return;
         }
 
-        final String directoryName = yesterday.format(DateTimeFormatter.ofPattern("yy-MM"));
+        final String directoryName = ROOT_DIRECTORY + "/" + yesterday.format(DateTimeFormatter.ofPattern("yy-MM"));
         final File directory = new File(directoryName);
-        directory.mkdir();
+        directory.mkdirs();
 
         final String fileName = yesterday.format(DateTimeFormatter.ofPattern("dd일")).concat(".md");
 
