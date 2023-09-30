@@ -13,4 +13,4 @@
 
 ## 📌 소개
 
-한국 시간으로 자정마다 [개인 블로그]('https://sechoi.tistory.com')와 [독서 기록 레포지토리]('https://github.com/dahyen0o/development-books')에 새로 올라온 글이 있으면 크롤링하여 TIL을 추가한다.
+한국 시간으로 자정마다 [개인 블로그](https://sechoi.tistory.com)와 [독서 기록 레포지토리](https://github.com/dahyen0o/development-books)에 새로 올라온 글이 있으면 크롤링하여 TIL을 추가한다.
