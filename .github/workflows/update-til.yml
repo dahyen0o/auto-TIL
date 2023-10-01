@@ -9,7 +9,7 @@ name: TIL 자동 생성
 
 on:
   schedule:
-    - cron: '0 15 * * *' # 한국 시간 = UTC +9:00
+    - cron: '* 15 * * *' # 한국 시간 = UTC +9:00
 
 permissions:
   contents: write
@@ -31,6 +31,10 @@ jobs:
       uses: gradle/gradle-build-action@bd5760595778326ba7f1441bcf7e88b49de61a25 # v2.6.0
       with:
         arguments: build
+
+    - name: Run Jar File
+      run: |
+        java -jar ./build/libs/auto-til-1.0-SNAPSHOT.jar
         
     - name: Commit changes
       run: |
