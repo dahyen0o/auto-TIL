@@ -36,7 +36,7 @@ jobs:
 
     - name: Run Jar File
       run: |
-        java -jar /home/runner/work/auto-TIL/auto-TIL/build/libs/auto-til-1.0-SNAPSHOT.jar -cp auto-til.main org.sen.Main
+        java -jar ./build/libs/auto-til-1.0-SNAPSHOT.jar
         
     - name: Commit changes
       run: |
