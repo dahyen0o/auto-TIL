@@ -34,6 +34,7 @@ jobs:
 
     - name: Run Jar File
       run: |
+        chmod +x /build/libs/auto-til-1.0-SNAPSHOT.jar
         java -jar /build/libs/auto-til-1.0-SNAPSHOT.jar
         
     - name: Commit changes
