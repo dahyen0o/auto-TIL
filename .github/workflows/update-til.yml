@@ -32,11 +32,10 @@ jobs:
     - name: Build with Gradle
       uses: gradle/gradle-build-action@bd5760595778326ba7f1441bcf7e88b49de61a25 # v2.6.0
       with:
-        arguments: build
+        arguments: bootJar
 
     - name: Run Jar File
       run: |
-        ls -R
         java -jar /home/runner/work/auto-TIL/auto-TIL/build/libs/auto-til-1.0-SNAPSHOT.jar -cp auto-til.main org.sen.Main
         
     - name: Commit changes
