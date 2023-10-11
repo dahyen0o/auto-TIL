@@ -21,6 +21,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
     - name: Set up JDK 17
       uses: actions/setup-java@v3
       with:
@@ -36,12 +38,11 @@ jobs:
       run: |
         java -jar ./build/libs/auto-til-1.0-SNAPSHOT.jar
         
-    - name: Commit changes
-      run: |
-        git config --global user.name 'sen' 
-        git config --global user.email 'dahyen0o@naver.com' 
-        git add -A
-        git commit -m "docs: TIL 작성" 
+    - name: Commit & Push changes
+      uses: actions-js/push@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        message: "docs: TIL 작성"
         
     - name: Push changes
       run: |
