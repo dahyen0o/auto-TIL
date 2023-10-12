@@ -45,7 +45,3 @@ jobs:
         author_email: 'seeunchoi99@gmail.com'
         author_name: 'sen'
         message: "docs: TIL 작성"
-        
-    - name: Push changes
-      run: |
-        git push
