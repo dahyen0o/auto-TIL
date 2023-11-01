@@ -25,8 +25,8 @@ public class BlogTILCrawler implements TILCrawler {
             }
 
             final Document post = scrapPost(postUrl).get();
-            final LocalDateTime createdTime = LocalDateTime.parse(getCreatedTime(post));
-            final LocalDate postCreatedDate = createdTime.toLocalDate();
+            final LocalDateTime postCreatedTime = LocalDateTime.parse(getCreatedTime(post));
+            final LocalDate postCreatedDate = postCreatedTime.toLocalDate();
             if (postCreatedDate.isEqual(tilDate)) {
                 posts.put(post.title(), postUrl);
             }
