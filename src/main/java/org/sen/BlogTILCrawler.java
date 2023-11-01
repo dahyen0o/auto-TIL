@@ -15,7 +15,7 @@ public class BlogTILCrawler implements TILCrawler {
     private static final String BLOG_URL = "https://sechoi.tistory.com";
 
     @Override
-    public Map<String, String> doCrawling(final LocalDate createdDate) throws IOException {
+    public Map<String, String> doCrawling(final LocalDate tilDate) throws IOException {
         final Map<String, String> posts = new HashMap<>();
         final int lastPostNumber = getLastPostNumber();
         for (int postNumber = lastPostNumber; postNumber >= 1; postNumber--) {
@@ -27,10 +27,10 @@ public class BlogTILCrawler implements TILCrawler {
             final Document post = scrapPost(postUrl).get();
             final LocalDateTime createdTime = LocalDateTime.parse(getCreatedTime(post));
             final LocalDate postCreatedDate = createdTime.toLocalDate();
-            if (postCreatedDate.isEqual(createdDate)) {
+            if (postCreatedDate.isEqual(tilDate)) {
                 posts.put(post.title(), postUrl);
             }
-            else if (postCreatedDate.isBefore(createdDate)) {
+            else if (postCreatedDate.isBefore(tilDate)) {
                 break;
             }
         }

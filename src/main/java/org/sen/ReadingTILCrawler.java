@@ -14,9 +14,9 @@ public class ReadingTILCrawler implements TILCrawler {
     private static final String READING_GITHUB_URL = "https://github.com/dahyen0o/development-books/commits/main";
 
     @Override
-    public Map<String, String> doCrawling(final LocalDate createdDate) throws IOException {
+    public Map<String, String> doCrawling(final LocalDate tilDate) throws IOException {
         final Map<String, String> commits = new HashMap<>();
-        getCommitsBy(createdDate).forEach(commit ->
+        getCommitsBy(tilDate).forEach(commit ->
                 commits.put(commit.text(), "https://github.com" + commit.attr("href"))
         );
         return commits;

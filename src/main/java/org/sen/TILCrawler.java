@@ -6,5 +6,5 @@ import java.util.Map;
 
 public interface TILCrawler {
 
-    Map<String, String> doCrawling(final LocalDate createdDate) throws IOException;
+    Map<String, String> doCrawling(final LocalDate tilDate) throws IOException;
 }
