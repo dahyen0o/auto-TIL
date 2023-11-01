@@ -1,14 +1,15 @@
 package org.sen;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
+
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.select.Elements;
 
 public class BlogTILCrawler implements TILCrawler {
 
@@ -29,8 +30,7 @@ public class BlogTILCrawler implements TILCrawler {
             final LocalDate postCreatedDate = postCreatedTime.toLocalDate();
             if (postCreatedDate.isEqual(tilDate)) {
                 posts.put(post.title(), postUrl);
-            }
-            else if (postCreatedDate.isBefore(tilDate)) {
+            } else if (postCreatedDate.isBefore(tilDate)) {
                 break;
             }
         }

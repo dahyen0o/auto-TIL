@@ -1,13 +1,14 @@
 package org.sen;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Element;
+
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Element;
 
 public class ReadingTILCrawler implements TILCrawler {
 
