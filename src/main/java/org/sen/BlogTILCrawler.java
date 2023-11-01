@@ -65,8 +65,6 @@ public class BlogTILCrawler implements TILCrawler {
 
     private Elements getPostsBy(final Document page) {
         return page.body()
-                .getElementsByTag("ol")
-                .first()
-                .children();
+                .getElementsByClass("article-content");
     }
 }
